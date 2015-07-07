@@ -1,0 +1,5 @@
+pod 'AVOSCloud'
+pod 'AVOSCloudIM'
+pod 'AVOSCloudSNS'
+pod 'MJRefresh'
+pod 'RongCloudIMKit'
