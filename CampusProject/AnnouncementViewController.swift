@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CampusTableViewController: UITableViewController {
+class AnnouncementViewController: UITableViewController {
 
     var dataArray:NSArray = NSArray()
     
@@ -37,7 +37,6 @@ class CampusTableViewController: UITableViewController {
         }
     }
     
-    
     func initPullRefresher(){
         
         // register refresh
@@ -53,7 +52,7 @@ class CampusTableViewController: UITableViewController {
     
     func loadData(){
     
-        var query : AVQuery = AVQuery(className: "Tweet")
+        var query : AVQuery = AVQuery(className: "Announcement")
         query.findObjectsInBackgroundWithBlock({
             array, error in
             
@@ -67,6 +66,9 @@ class CampusTableViewController: UITableViewController {
                 self.dataArray = result
                 println(self.dataArray[0])
             }
+            
+            // order by date (latest the topest)
+            self.dataArray = self.dataArray.reverseObjectEnumerator().allObjects;
             
             self.tableView.reloadData()
             self.tableView.header.endRefreshing()

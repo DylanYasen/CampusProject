@@ -10,16 +10,13 @@ import UIKit
 
 class DiscoverTableViewController: UITableViewController {
 
+    var dataArray:NSArray = NSArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initPullRefresher()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
     
     
@@ -37,9 +34,28 @@ class DiscoverTableViewController: UITableViewController {
     
     //
     func loadNewData(){
-        println("load")
-        //self.tableView.reloadData()
-        self.tableView.header.endRefreshing()
+        var query : AVQuery = AVQuery(className: "Tweet")
+        query.findObjectsInBackgroundWithBlock({
+            array, error in
+            
+            println("result")
+            
+            let result:NSArray = array
+            let obj:[AnyObject] = array
+            //let err:NSError = error
+            
+            if result.count>0{
+                self.dataArray = result
+                println(self.dataArray[0])
+            }
+            
+            // order by date (latest the topest)
+            self.dataArray = self.dataArray.reverseObjectEnumerator().allObjects;
+            
+            self.tableView.reloadData()
+            self.tableView.header.endRefreshing()
+        })
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,68 +68,64 @@ class DiscoverTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return dataArray.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
+        // init
+        let cellIdentifier : String = "cell"
+        let row = indexPath.row
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TweetTableViewCell
+        
+        // get tweet object
+        let tweet:AVObject = self.dataArray.objectAtIndex(row) as! AVObject
+        
+        // get content text
+        let tweetText = tweet.valueForKey("text") as! String
+        
+        // get user
+        let userID = tweet.objectForKey("sender").objectId
+        let sender:AVUser = getUser(userID)
+        
+        // get time stamp
+        let date = tweet.objectForKey("createdAt") as! NSDate
+        var calendar = NSCalendar()
+        let flags = NSCalendarUnit(UInt.max)
+        
+        var dateComponents:NSDateComponents = calendar.components(flags, fromDate: date)
+        
+        let yearTime:String = dateComponents.year.description + "-" + dateComponents.month.description + "-" + dateComponents.day.description
+        let hourTime:String = dateComponents.hour.description + ":" + dateComponents.minute.description
+        let timestamp:String = yearTime + "  " + hourTime
+        
+        println(timestamp)
+        
+        println(sender)
+        println("sender name +: " + sender.username)
+        
+        cell.usernameLabel.text = sender.username
+        cell.tweetTextview.text = tweetText
+        cell.timestampLabel.text = timestamp
+        
+        //cell.tweetTextfield = "long ass tweet"
+        println("pass")
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    // move to a Common.swift
+    func getUser(id:String) -> AVUser{
+        
+        let query : AVQuery = AVQuery(className: "_User")
+        var obj : AVObject = query.getObjectWithId(id)
+        
+        return obj as! AVUser
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

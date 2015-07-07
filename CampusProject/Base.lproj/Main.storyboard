@@ -27,7 +27,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qLs-ce-Jon">
                                 <rect key="frame" x="202" y="150" width="196" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="102" y="150" width="196" height="30"/>
                                 </variation>
@@ -113,13 +113,13 @@
         <!--校园-->
         <scene sceneID="UZr-9o-r6K">
             <objects>
-                <tableViewController title="校园" id="BdG-Ye-eo8" customClass="CampusTableViewController" customModule="CampusProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="230" sectionHeaderHeight="22" sectionFooterHeight="22" id="4E4-HR-NmG">
+                <tableViewController title="校园" id="BdG-Ye-eo8" customClass="AnnouncementViewController" customModule="CampusProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="189" sectionHeaderHeight="22" sectionFooterHeight="22" id="4E4-HR-NmG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="230" id="Ahx-rD-FJj" customClass="TweetTableViewCell" customModule="CampusProject" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="189" id="Ahx-rD-FJj" customClass="TweetTableViewCell" customModule="CampusProject" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ahx-rD-FJj" id="mXQ-8p-HaX">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -138,18 +138,6 @@
                                                 <rect key="frame" x="66" y="16" width="150" height="21"/>
                                             </variation>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="asdasd" translatesAutoresizingMaskIntoConstraints="NO" id="eeQ-oG-qUx">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <accessibility key="accessibilityConfiguration">
-                                                <accessibilityTraits key="traits" none="YES" staticText="YES"/>
-                                            </accessibility>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="74" width="384" height="138"/>
-                                            </variation>
-                                        </textView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlg-n1-40w">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -159,21 +147,33 @@
                                                 <rect key="frame" x="66" y="45" width="150" height="21"/>
                                             </variation>
                                         </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="asdasd" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeQ-oG-qUx">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="82" width="384" height="98"/>
+                                            </variation>
+                                        </textView>
                                     </subviews>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="lAQ-du-xjL"/>
                                             <exclude reference="0QG-bb-4il"/>
-                                            <exclude reference="eeQ-oG-qUx"/>
                                             <exclude reference="tlg-n1-40w"/>
+                                            <exclude reference="eeQ-oG-qUx"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="lAQ-du-xjL"/>
                                             <include reference="0QG-bb-4il"/>
-                                            <include reference="eeQ-oG-qUx"/>
                                             <include reference="tlg-n1-40w"/>
+                                            <include reference="eeQ-oG-qUx"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -194,6 +194,7 @@
                     <navigationItem key="navigationItem" title="校园广播" id="7XX-7b-fHW">
                         <barButtonItem key="rightBarButtonItem" tag="3" title="新通知" id="emH-7T-WWf">
                             <connections>
+                                <action selector="newAnnouncement:" destination="BdG-Ye-eo8" id="4PQ-ga-MUb"/>
                                 <segue destination="JaT-hS-w2F" kind="show" id="VEg-pz-dAF"/>
                             </connections>
                         </barButtonItem>
@@ -210,7 +211,7 @@
         <!--新通知-->
         <scene sceneID="XJh-vW-7vt">
             <objects>
-                <viewController id="JaT-hS-w2F" sceneMemberID="viewController">
+                <viewController id="JaT-hS-w2F" customClass="AnnouncementComposetViewController" customModule="CampusProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bnT-DX-h1e"/>
                         <viewControllerLayoutGuide type="bottom" id="HHH-gN-zO9"/>
@@ -218,12 +219,40 @@
                     <view key="view" contentMode="scaleToFill" id="ee2-rU-Djv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHu-YN-lCY">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="61" y="98" width="279" height="188"/>
+                                </variation>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mHu-YN-lCY"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="mHu-YN-lCY"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="新通知" id="2Gr-2A-4ZW">
                         <barButtonItem key="backBarButtonItem" title="取消" id="TmQ-ad-4Dd"/>
-                        <barButtonItem key="rightBarButtonItem" title="发送" id="g16-EK-bi8"/>
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="g16-EK-bi8">
+                            <connections>
+                                <action selector="newAnnouncement:" destination="JaT-hS-w2F" id="uWt-8c-iLb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="composeTextview" destination="mHu-YN-lCY" id="tzc-t0-JSC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1T-Nc-Gnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,42 +262,80 @@
         <scene sceneID="3Qu-Aa-26j">
             <objects>
                 <tableViewController title="发现" id="6Sh-Tz-IhR" customClass="DiscoverTableViewController" customModule="CampusProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kiC-R8-23A">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="189" sectionHeaderHeight="22" sectionFooterHeight="22" id="BNe-FT-rwA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="vSb-QA-cEB" customClass="TweetTableViewCell" customModule="CampusProject" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="189" id="ZZR-Re-hX0" customClass="TweetTableViewCell" customModule="CampusProject" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vSb-QA-cEB" id="m6U-ag-Ijv">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZZR-Re-hX0" id="Aqp-Wr-tp9">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62v-OU-aFA">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_compose_video" translatesAutoresizingMaskIntoConstraints="NO" id="phI-3v-4km">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="16" width="50" height="50"/>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQa-aa-VVJ">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="66" y="16" width="150" height="21"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da0-OC-P5J">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="101" y="11" width="42" height="21"/>
+                                                <rect key="frame" x="66" y="45" width="150" height="21"/>
                                             </variation>
                                         </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="asdasd" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9O-c7-78f">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="82" width="384" height="98"/>
+                                            </variation>
+                                        </textView>
                                     </subviews>
                                     <variation key="default">
                                         <mask key="subviews">
-                                            <exclude reference="62v-OU-aFA"/>
+                                            <exclude reference="phI-3v-4km"/>
+                                            <exclude reference="YQa-aa-VVJ"/>
+                                            <exclude reference="Da0-OC-P5J"/>
+                                            <exclude reference="P9O-c7-78f"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
                                         <mask key="subviews">
-                                            <include reference="62v-OU-aFA"/>
+                                            <include reference="phI-3v-4km"/>
+                                            <include reference="YQa-aa-VVJ"/>
+                                            <include reference="Da0-OC-P5J"/>
+                                            <include reference="P9O-c7-78f"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImg" destination="phI-3v-4km" id="oUM-iB-juY"/>
+                                    <outlet property="timestampLabel" destination="Da0-OC-P5J" id="J7c-wt-W4j"/>
+                                    <outlet property="tweetTextview" destination="P9O-c7-78f" id="dIT-9m-cqD"/>
+                                    <outlet property="usernameLabel" destination="YQa-aa-VVJ" id="Ptu-X0-gFJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="6Sh-Tz-IhR" id="DIb-PB-UlG"/>
-                            <outlet property="delegate" destination="6Sh-Tz-IhR" id="9an-01-5xo"/>
+                            <outlet property="dataSource" destination="6Sh-Tz-IhR" id="Qw9-ho-huk"/>
+                            <outlet property="delegate" destination="6Sh-Tz-IhR" id="U25-XV-CiA"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="广场" id="giO-5X-vpQ">
@@ -286,7 +353,7 @@
         <!--新帖子-->
         <scene sceneID="dd3-dY-5Og">
             <objects>
-                <viewController id="Kwb-MT-Mvm" sceneMemberID="viewController">
+                <viewController id="Kwb-MT-Mvm" customClass="DiscoverComposeViewController" customModule="CampusProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lbu-zY-qod"/>
                         <viewControllerLayoutGuide type="bottom" id="NZj-og-iLo"/>
@@ -294,13 +361,41 @@
                     <view key="view" contentMode="scaleToFill" id="YKv-up-pL4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPe-cJ-pRi">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="61" y="100" width="279" height="188"/>
+                                </variation>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="nPe-cJ-pRi"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="nPe-cJ-pRi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="新帖子" id="J42-QG-0Au">
-                        <barButtonItem key="rightBarButtonItem" title="发送" id="sqw-bP-I8h"/>
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="sqw-bP-I8h">
+                            <connections>
+                                <action selector="sendTweet:" destination="Kwb-MT-Mvm" id="u8C-N9-3fD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tweetTextfield" destination="nPe-cJ-pRi" id="rCe-Th-Sh1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLR-LJ-XNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

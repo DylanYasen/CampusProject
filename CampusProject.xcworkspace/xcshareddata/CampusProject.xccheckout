@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0363BB5D-C951-4E97-A235-573084782A2E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CampusProject</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9387F0C709CEFD36ABE5BFE688F6F97620BF1923</key>
+		<string>https://github.com/DylanYasen/CampusProject.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CampusProject.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9387F0C709CEFD36ABE5BFE688F6F97620BF1923</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/DylanYasen/CampusProject.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9387F0C709CEFD36ABE5BFE688F6F97620BF1923</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9387F0C709CEFD36ABE5BFE688F6F97620BF1923</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CampusProject</string>
+		</dict>
+	</array>
+</dict>
+</plist>
