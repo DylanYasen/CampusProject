@@ -12,6 +12,7 @@
 		A65645591B4A3AA000741477 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65645581B4A3AA000741477 /* AnnouncementViewController.swift */; };
 		A656455B1B4A3B0400741477 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A656455A1B4A3B0400741477 /* DiscoverTableViewController.swift */; };
 		A658FB6F1B48F6FC0000B757 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658FB6E1B48F6FC0000B757 /* LoginViewController.swift */; };
+		A67027681B4D5A5E004364C1 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67027671B4D5A5E004364C1 /* Common.swift */; };
 		A6A83DE71B4BEE51008DCBAE /* AnnouncementComposetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A83DE61B4BEE51008DCBAE /* AnnouncementComposetViewController.swift */; };
 		A6A83DEB1B4C0186008DCBAE /* DiscoverComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A83DEA1B4C0186008DCBAE /* DiscoverComposeViewController.swift */; };
 		A6E14FC71B48D4DF00EDC535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E14FC61B48D4DF00EDC535 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		A656455A1B4A3B0400741477 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		A658FB5F1B48D8340000B757 /* CampusProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampusProject-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		A658FB6E1B48F6FC0000B757 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A67027671B4D5A5E004364C1 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A6A83DE61B4BEE51008DCBAE /* AnnouncementComposetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementComposetViewController.swift; sourceTree = "<group>"; };
 		A6A83DEA1B4C0186008DCBAE /* DiscoverComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverComposeViewController.swift; sourceTree = "<group>"; };
 		A6E14FC11B48D4DF00EDC535 /* CampusProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				A6E14FCD1B48D4DF00EDC535 /* Images.xcassets */,
 				A6E14FCF1B48D4DF00EDC535 /* LaunchScreen.xib */,
 				A6E14FC41B48D4DF00EDC535 /* Supporting Files */,
+				A67027671B4D5A5E004364C1 /* Common.swift */,
 			);
 			path = CampusProject;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				A6A83DEB1B4C0186008DCBAE /* DiscoverComposeViewController.swift in Sources */,
 				A656455B1B4A3B0400741477 /* DiscoverTableViewController.swift in Sources */,
 				A6E94B6A1B494E9B005BC32C /* MesseageViewController.swift in Sources */,
+				A67027681B4D5A5E004364C1 /* Common.swift in Sources */,
 				A619B9731B4A47E0007D606A /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +423,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -457,6 +461,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -467,11 +472,15 @@
 			baseConfigurationReference = EC3D11E730C4F19AFB79265D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = Yadikaer;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CampusProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_NO_PIE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CampusProject-Bridging-Header.h";
@@ -484,11 +493,15 @@
 			baseConfigurationReference = E907075C77BF63CCE4862447 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = Yadikaer;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CampusProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_NO_PIE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CampusProject-Bridging-Header.h";
@@ -509,6 +522,7 @@
 				);
 				INFOPLIST_FILE = CampusProjectTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CampusProject.app/CampusProject";
 			};
