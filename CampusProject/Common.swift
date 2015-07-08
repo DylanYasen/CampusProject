@@ -8,7 +8,18 @@
 
 import Foundation
 
-class Common {
+public class Common {
+    
+    public static func errorCodeToStr(code : Int) -> String{
+        
+        switch(code){
+         
+        default:
+            break
+        }
+        
+        return "str"
+    }
 
 
 }

@@ -13,6 +13,7 @@
 		A656455B1B4A3B0400741477 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A656455A1B4A3B0400741477 /* DiscoverTableViewController.swift */; };
 		A658FB6F1B48F6FC0000B757 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658FB6E1B48F6FC0000B757 /* LoginViewController.swift */; };
 		A67027681B4D5A5E004364C1 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67027671B4D5A5E004364C1 /* Common.swift */; };
+		A670276F1B4D6280004364C1 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A670276E1B4D6280004364C1 /* MeTableViewController.swift */; };
 		A6A83DE71B4BEE51008DCBAE /* AnnouncementComposetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A83DE61B4BEE51008DCBAE /* AnnouncementComposetViewController.swift */; };
 		A6A83DEB1B4C0186008DCBAE /* DiscoverComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A83DEA1B4C0186008DCBAE /* DiscoverComposeViewController.swift */; };
 		A6E14FC71B48D4DF00EDC535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E14FC61B48D4DF00EDC535 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		A658FB5F1B48D8340000B757 /* CampusProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampusProject-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		A658FB6E1B48F6FC0000B757 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A67027671B4D5A5E004364C1 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		A670276E1B4D6280004364C1 /* MeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		A6A83DE61B4BEE51008DCBAE /* AnnouncementComposetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementComposetViewController.swift; sourceTree = "<group>"; };
 		A6A83DEA1B4C0186008DCBAE /* DiscoverComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverComposeViewController.swift; sourceTree = "<group>"; };
 		A6E14FC11B48D4DF00EDC535 /* CampusProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,11 +102,20 @@
 		A619B9711B4A415A007D606A /* TabelView */ = {
 			isa = PBXGroup;
 			children = (
-				A6A83DE91B4C011B008DCBAE /* Discover */,
+				A67027691B4D61ED004364C1 /* Me */,
 				A6A83DE81B4BFF9D008DCBAE /* Announcement */,
+				A6A83DE91B4C011B008DCBAE /* Discover */,
 				A619B9721B4A47E0007D606A /* TweetTableViewCell.swift */,
 			);
 			name = TabelView;
+			sourceTree = "<group>";
+		};
+		A67027691B4D61ED004364C1 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				A670276E1B4D6280004364C1 /* MeTableViewController.swift */,
+			);
+			name = Me;
 			sourceTree = "<group>";
 		};
 		A6A83DE81B4BFF9D008DCBAE /* Announcement */ = {
@@ -149,6 +160,7 @@
 		A6E14FC31B48D4DF00EDC535 /* CampusProject */ = {
 			isa = PBXGroup;
 			children = (
+				A67027671B4D5A5E004364C1 /* Common.swift */,
 				A658FB5F1B48D8340000B757 /* CampusProject-Bridging-Header.h */,
 				A6E94B601B494CA1005BC32C /* View */,
 				A6E14FC61B48D4DF00EDC535 /* AppDelegate.swift */,
@@ -156,7 +168,6 @@
 				A6E14FCD1B48D4DF00EDC535 /* Images.xcassets */,
 				A6E14FCF1B48D4DF00EDC535 /* LaunchScreen.xib */,
 				A6E14FC41B48D4DF00EDC535 /* Supporting Files */,
-				A67027671B4D5A5E004364C1 /* Common.swift */,
 			);
 			path = CampusProject;
 			sourceTree = "<group>";
@@ -338,6 +349,7 @@
 				A658FB6F1B48F6FC0000B757 /* LoginViewController.swift in Sources */,
 				A65645591B4A3AA000741477 /* AnnouncementViewController.swift in Sources */,
 				A6A83DE71B4BEE51008DCBAE /* AnnouncementComposetViewController.swift in Sources */,
+				A670276F1B4D6280004364C1 /* MeTableViewController.swift in Sources */,
 				A6E14FC71B48D4DF00EDC535 /* AppDelegate.swift in Sources */,
 				A6A83DEB1B4C0186008DCBAE /* DiscoverComposeViewController.swift in Sources */,
 				A656455B1B4A3B0400741477 /* DiscoverTableViewController.swift in Sources */,
