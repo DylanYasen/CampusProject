@@ -22,4 +22,14 @@ public class Common {
     }
 
 
+    public static func getUser(id:String) -> AVUser{
+        
+        let query : AVQuery = AVQuery(className: "_User")
+        var obj : AVObject = query.getObjectWithId(id)
+        
+        return obj as! AVUser
+    }
+
 }
+
+    

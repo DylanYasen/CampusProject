@@ -5,7 +5,8 @@ PODS:
   - AVOSCloudSNS (3.1.2.6):
     - AVOSCloud
   - MJRefresh (2.2.0)
-  - RongCloudIMKit (2.1.5)
+  - RongCloudIMKit (2.2.1)
+  - RSKImageCropper (1.2.1)
 
 DEPENDENCIES:
   - AVOSCloud
@@ -13,12 +14,14 @@ DEPENDENCIES:
   - AVOSCloudSNS
   - MJRefresh
   - RongCloudIMKit
+  - RSKImageCropper
 
 SPEC CHECKSUMS:
   AVOSCloud: a2fc903a1aee5a346f0fb839f92617378fffd2ed
   AVOSCloudIM: f8610c1139eb143f8260c984b6de83b93d7cca57
   AVOSCloudSNS: 2310d5a478bfb31e1a2af85a93f5dcbe82d83023
   MJRefresh: 65a2bf14abb6feeaed8696aa1551f70e15ab0a08
-  RongCloudIMKit: 6239f60ec805995985e7c160fb4f8167652d8666
+  RongCloudIMKit: a0a277a6eba722b99cde4298eb0aa845192c6937
+  RSKImageCropper: e912419809d3a4eac47864d6fbc22f84c14879d5
 
 COCOAPODS: 0.37.2

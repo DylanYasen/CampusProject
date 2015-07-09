@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5942BC581F6E6FEE1037C410 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21777E063972EEA87CA86B85 /* libPods.a */; };
 		A619B9731B4A47E0007D606A /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B9721B4A47E0007D606A /* TweetTableViewCell.swift */; };
+		A624D3781B4EE00F003A23F7 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A624D3771B4EE00F003A23F7 /* LocalUser.swift */; };
+		A6407E701B4E8C9A0087CD58 /* MyProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6407E6F1B4E8C9A0087CD58 /* MyProfileTableViewController.swift */; };
 		A65645591B4A3AA000741477 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65645581B4A3AA000741477 /* AnnouncementViewController.swift */; };
 		A656455B1B4A3B0400741477 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A656455A1B4A3B0400741477 /* DiscoverTableViewController.swift */; };
 		A658FB6F1B48F6FC0000B757 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658FB6E1B48F6FC0000B757 /* LoginViewController.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		21777E063972EEA87CA86B85 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A619B9721B4A47E0007D606A /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		A624D3771B4EE00F003A23F7 /* LocalUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
+		A6407E6F1B4E8C9A0087CD58 /* MyProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileTableViewController.swift; sourceTree = "<group>"; };
 		A65645581B4A3AA000741477 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		A656455A1B4A3B0400741477 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		A658FB5F1B48D8340000B757 /* CampusProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampusProject-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				A670276E1B4D6280004364C1 /* MeTableViewController.swift */,
+				A6407E6F1B4E8C9A0087CD58 /* MyProfileTableViewController.swift */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				A67027671B4D5A5E004364C1 /* Common.swift */,
+				A624D3771B4EE00F003A23F7 /* LocalUser.swift */,
 				A658FB5F1B48D8340000B757 /* CampusProject-Bridging-Header.h */,
 				A6E94B601B494CA1005BC32C /* View */,
 				A6E14FC61B48D4DF00EDC535 /* AppDelegate.swift */,
@@ -346,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6E94B681B494DDD005BC32C /* MeViewController.swift in Sources */,
+				A624D3781B4EE00F003A23F7 /* LocalUser.swift in Sources */,
 				A658FB6F1B48F6FC0000B757 /* LoginViewController.swift in Sources */,
 				A65645591B4A3AA000741477 /* AnnouncementViewController.swift in Sources */,
 				A6A83DE71B4BEE51008DCBAE /* AnnouncementComposetViewController.swift in Sources */,
@@ -356,6 +363,7 @@
 				A6E94B6A1B494E9B005BC32C /* MesseageViewController.swift in Sources */,
 				A67027681B4D5A5E004364C1 /* Common.swift in Sources */,
 				A619B9731B4A47E0007D606A /* TweetTableViewCell.swift in Sources */,
+				A6407E701B4E8C9A0087CD58 /* MyProfileTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +443,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -473,7 +481,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -492,7 +500,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_NO_PIE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CampusProject-Bridging-Header.h";
@@ -513,7 +521,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_NO_PIE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CampusProject-Bridging-Header.h";
