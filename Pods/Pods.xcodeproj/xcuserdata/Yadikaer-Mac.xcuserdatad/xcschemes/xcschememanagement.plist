@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-RSKImageCropper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3F9972BEC5C72DEBEAC99C5F</key>
+		<key>009D81EA736D4B9D872F9EA7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4718FF783ACA9838E4648CEF</key>
+		<key>1F0D7BB976EC0116CB99F05D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69E13031D9A3D72E68DB7B16</key>
+		<key>2574406A2EFBC441BB240C9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6FA734AA04FF56ED3D8D63BB</key>
+		<key>8BC8DD0E7D7A04B43C7FEF67</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CBA0E0A190BC14867883F122</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F869EDDD5E229E02B4F75979</key>
+		<key>DB221BA9297E0BF76C143296</key>
 		<dict>
 			<key>primary</key>
 			<true/>
