@@ -11,6 +11,7 @@
 		A619B9731B4A47E0007D606A /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B9721B4A47E0007D606A /* TweetTableViewCell.swift */; };
 		A624D3781B4EE00F003A23F7 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A624D3771B4EE00F003A23F7 /* LocalUser.swift */; };
 		A6407E701B4E8C9A0087CD58 /* MyProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6407E6F1B4E8C9A0087CD58 /* MyProfileTableViewController.swift */; };
+		A653CF151B50C1E4005E90AD /* RenameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653CF141B50C1E4005E90AD /* RenameViewController.swift */; };
 		A65645591B4A3AA000741477 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65645581B4A3AA000741477 /* AnnouncementViewController.swift */; };
 		A656455B1B4A3B0400741477 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A656455A1B4A3B0400741477 /* DiscoverTableViewController.swift */; };
 		A658FB6F1B48F6FC0000B757 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A658FB6E1B48F6FC0000B757 /* LoginViewController.swift */; };
@@ -24,7 +25,6 @@
 		A6E14FD11B48D4DF00EDC535 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E14FCF1B48D4DF00EDC535 /* LaunchScreen.xib */; };
 		A6E14FDD1B48D4DF00EDC535 /* CampusProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E14FDC1B48D4DF00EDC535 /* CampusProjectTests.swift */; };
 		A6E14FE71B48D4F800EDC535 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A6E14FE61B48D4F800EDC535 /* Podfile */; };
-		A6E94B681B494DDD005BC32C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E94B671B494DDD005BC32C /* MeViewController.swift */; };
 		A6E94B6A1B494E9B005BC32C /* MesseageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E94B691B494E9B005BC32C /* MesseageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +43,7 @@
 		A619B9721B4A47E0007D606A /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		A624D3771B4EE00F003A23F7 /* LocalUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
 		A6407E6F1B4E8C9A0087CD58 /* MyProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileTableViewController.swift; sourceTree = "<group>"; };
+		A653CF141B50C1E4005E90AD /* RenameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenameViewController.swift; sourceTree = "<group>"; };
 		A65645581B4A3AA000741477 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		A656455A1B4A3B0400741477 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		A658FB5F1B48D8340000B757 /* CampusProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampusProject-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
@@ -61,7 +62,6 @@
 		A6E14FDB1B48D4DF00EDC535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E14FDC1B48D4DF00EDC535 /* CampusProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusProjectTests.swift; sourceTree = "<group>"; };
 		A6E14FE61B48D4F800EDC535 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A6E94B671B494DDD005BC32C /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		A6E94B691B494E9B005BC32C /* MesseageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesseageViewController.swift; sourceTree = "<group>"; };
 		E907075C77BF63CCE4862447 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EC3D11E730C4F19AFB79265D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				A67027691B4D61ED004364C1 /* Me */,
-				A6A83DE81B4BFF9D008DCBAE /* Announcement */,
 				A6A83DE91B4C011B008DCBAE /* Discover */,
 				A619B9721B4A47E0007D606A /* TweetTableViewCell.swift */,
 			);
@@ -119,6 +118,8 @@
 			children = (
 				A670276E1B4D6280004364C1 /* MeTableViewController.swift */,
 				A6407E6F1B4E8C9A0087CD58 /* MyProfileTableViewController.swift */,
+				A653CF141B50C1E4005E90AD /* RenameViewController.swift */,
+				A6A83DE81B4BFF9D008DCBAE /* Announcement */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -209,7 +210,6 @@
 				A619B9711B4A415A007D606A /* TabelView */,
 				A658FB6E1B48F6FC0000B757 /* LoginViewController.swift */,
 				A6E94B691B494E9B005BC32C /* MesseageViewController.swift */,
-				A6E94B671B494DDD005BC32C /* MeViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -351,10 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6E94B681B494DDD005BC32C /* MeViewController.swift in Sources */,
 				A624D3781B4EE00F003A23F7 /* LocalUser.swift in Sources */,
 				A658FB6F1B48F6FC0000B757 /* LoginViewController.swift in Sources */,
 				A65645591B4A3AA000741477 /* AnnouncementViewController.swift in Sources */,
+				A653CF151B50C1E4005E90AD /* RenameViewController.swift in Sources */,
 				A6A83DE71B4BEE51008DCBAE /* AnnouncementComposetViewController.swift in Sources */,
 				A670276F1B4D6280004364C1 /* MeTableViewController.swift in Sources */,
 				A6E14FC71B48D4DF00EDC535 /* AppDelegate.swift in Sources */,
@@ -424,6 +424,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -468,6 +469,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

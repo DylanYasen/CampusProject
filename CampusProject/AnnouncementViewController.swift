@@ -25,8 +25,10 @@ class AnnouncementViewController: UITableViewController {
         obj.setObject("this is a test tweet", forKey: "text")
         obj.save()
         */
-
         initPullRefresher()
+        
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -98,26 +100,36 @@ class AnnouncementViewController: UITableViewController {
         
         // get time stamp
         let date = tweet.objectForKey("createdAt") as! NSDate
-        var calendar = NSCalendar()
-        let flags = NSCalendarUnit(UInt.max)
-        
-        var dateComponents:NSDateComponents = calendar.components(flags, fromDate: date)
-      
-        let yearTime:String = dateComponents.year.description + "-" + dateComponents.month.description + "-" + dateComponents.day.description
-        let hourTime:String = dateComponents.hour.description + ":" + dateComponents.minute.description
-        let timestamp:String = yearTime + "  " + hourTime
-        
-        println(timestamp)
-        
-        println(sender)
-        println("sender name +: " + sender.username)
-        
-        cell.usernameLabel.text = sender.username
+        var dateFormatter : NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        let timestamp = dateFormatter.stringFromDate(date)
+               
+        cell.usernameLabel.text = sender.valueForKey("nickname") as? String
         cell.tweetTextview.text = tweetText
         cell.timestampLabel.text = timestamp
         
-        //cell.tweetTextfield = "long ass tweet"
-        println("pass")
+        // get avatar
+        // show profile image
+        let avatarID = sender.objectForKey("avatar").objectId
+        
+        // set avatar
+        AVFile.getFileWithObjectId(avatarID,withBlock: {
+            file,error in
+            
+            let imgWidth:Int32 = Int32(cell.avatarImg.layer.frame.width)
+            let imgHeight:Int32 = Int32(cell.avatarImg.layer.frame.height)
+            if(error == nil){
+                var f : AVFile = file
+                f.getThumbnail(true, width: imgWidth, height: imgHeight, withBlock: {
+                    image,error in
+                    
+                    if error == nil{
+                        cell.avatarImg.image = image
+                    }
+                })
+            }
+        })
         
         return cell
     }

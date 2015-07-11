@@ -11,6 +11,7 @@ import UIKit
 class MyProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var nicknameLabel: UILabel!
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,35 +19,30 @@ class MyProfileTableViewController: UITableViewController, UIImagePickerControll
     
     override func viewWillAppear(animated: Bool) {
         
-        self.profileImg.image = LocalUser.profileImage
-
+        //self.profileImg.image = LocalUser.profileImage
         
-        /*
-        AVUser.currentUser().refreshInBackgroundWithBlock({
-            obj, error in
+        // show user name
+        self.nicknameLabel.text = (AVUser.currentUser().objectForKey("nickname") as! String)
+        
+        // show profile image
+        let avatarID = AVUser.currentUser().objectForKey("avatar").objectId
+        
+        AVFile.getFileWithObjectId(avatarID,withBlock: {
+            file,error in
             
+            let imgWidth:Int32 = Int32(self.profileImg.layer.frame.width)
+            let imgHeight:Int32 = Int32(self.profileImg.layer.frame.height)
             if(error == nil){
-            
-                var filePtr = AVUser.currentUser().objectForKey("avatar") as! AVFile
-            
-                if(filePtr == nil){
-                    println("file nil")
-                    return
-                }
-                
-                var file : AVFile = filePtr.memory
-    
-                // TODO
-                let url = NSURL(string: file.url)
-                let data = NSData(contentsOfURL: url!)
-                        
-                var img : UIImage = UIImage(data:data!)!
-                self.profileImg.image = img
+                var f : AVFile = file
+                f.getThumbnail(true, width: imgWidth, height: imgHeight, withBlock: {
+                    image,error in
+                    
+                    if error == nil{
+                        self.profileImg.image = image    
+                    }
+                })
             }
-            
         })
-
-        */
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,17 +52,24 @@ class MyProfileTableViewController: UITableViewController, UIImagePickerControll
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        var row : Int = indexPath.row;
+        let row = indexPath.row;
+        let section = indexPath.section
         
-        switch(row){
+        println(section)
+        println(row)
+        
+        if section == 0 {
+
+            if row == 0{
+                 selectAvatar()
+            }
+            else if row == 1 {
+                selectEditNickName()
+            }
+        }
+        
+        else if section == 1 {
             
-        case 0:
-            selectAvatar()
-            break;
-            
-            
-        default:
-            break;
         }
     }
     
@@ -104,26 +107,18 @@ class MyProfileTableViewController: UITableViewController, UIImagePickerControll
             
             if(saveSucceeded){
                 
-                // update user info
-                AVFile.getFileWithObjectId(imgFile.objectId, withBlock: {
-                    file, error in
-                    
-                    if(error == nil){
-                        // update user avatar
-                        AVUser.currentUser().setObject(file, forKey: "avatar")
-                        AVUser.currentUser().saveInBackground()
-                    }
-                })
+                // TODO: deleted old avatar
                 
+                // update user avatar info
+                AVUser.currentUser().setObject(imgFile, forKey: "avatar")
+                AVUser.currentUser().saveInBackground()
             }
         })
-        
     }
     
-    
-    
-    func selectNickName(){
-        
+    func selectEditNickName(){
+ 
+       self.performSegueWithIdentifier("rename", sender: self)
     }
 
     /*

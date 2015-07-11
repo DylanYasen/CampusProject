@@ -1,20 +1,33 @@
 //
-//  MeViewController.swift
+//  RenameViewController.swift
 //  CampusProject
 //
-//  Created by Yadikaer on 7/5/15.
+//  Created by Yadikaer on 7/10/15.
 //  Copyright (c) 2015 Yadikaer. All rights reserved.
 //
 
 import UIKit
 
-class MeViewController: UIViewController {
+class RenameViewController: UIViewController {
 
+    @IBOutlet weak var renameTextfield: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        renameTextfield.text = AVUser.currentUser().objectForKey("nickname") as! String
     }
+    
+    @IBAction func OnSave(sender: AnyObject) {
+        
+        let newName = renameTextfield.text;
+        AVUser.currentUser().setObject(newName, forKey: "nickname")
+        AVUser.currentUser().saveInBackground()
+        
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -8,10 +8,20 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UIAlertViewDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // hide keyboard
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return false
     }
     
     @IBOutlet weak var idTextfield: UITextField!
@@ -26,9 +36,14 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
         
         // login succeed
         if((myUser) != nil){
+            
+            // **** TODO:
+            //   REMOVE later
+            myUser!.setObject(studentID, forKey: "nickname")
+            myUser?.saveInBackground()
+            
             // transit
             self.performSegueWithIdentifier("loginSuccess", sender: self)
-            
         }
         // login failed
         else{
@@ -51,6 +66,7 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
         var myUser:AVUser = AVUser()
         myUser.username = studentID
         myUser.password = password
+        myUser.setObject(studentID, forKey: "nickname")
         
         if(myUser.signUp(&error)){
             let alert = UIAlertView()

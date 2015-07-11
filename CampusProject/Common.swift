@@ -29,6 +29,14 @@ public class Common {
         
         return obj as! AVUser
     }
+    
+    public static func getFileObj(id:String) -> AVObject{
+        
+        let query : AVQuery = AVQuery(className: "_File")
+        var obj  = query.getObjectWithId(id)
+
+        return obj
+    }
 
 }
 

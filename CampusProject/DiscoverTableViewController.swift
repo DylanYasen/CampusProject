@@ -15,11 +15,14 @@ class DiscoverTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        
         initPullRefresher()
         
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
-    
+        
     func initPullRefresher(){
         
         // register refresh
@@ -31,6 +34,7 @@ class DiscoverTableViewController: UITableViewController {
         // refresh now
         self.tableView.header.beginRefreshing()
     }
+
     
     //
     func loadNewData(){
@@ -63,12 +67,11 @@ class DiscoverTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
+   
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,6 +79,8 @@ class DiscoverTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return dataArray.count
     }
+    
+    
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -92,40 +97,46 @@ class DiscoverTableViewController: UITableViewController {
         
         // get user
         let userID = tweet.objectForKey("sender").objectId
-        let sender:AVUser = getUser(userID)
+        let sender:AVUser = Common.getUser(userID)
         
         // get time stamp
         let date = tweet.objectForKey("createdAt") as! NSDate
-        var calendar = NSCalendar()
-        let flags = NSCalendarUnit(UInt.max)
+        var dateFormatter : NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        let timestamp = dateFormatter.stringFromDate(date)
+
+        // get avatar
+        // show profile image
+        let avatarID = sender.objectForKey("avatar").objectId
         
-        var dateComponents:NSDateComponents = calendar.components(flags, fromDate: date)
+        // set avatar
+        AVFile.getFileWithObjectId(avatarID,withBlock: {
+            file,error in
+            
+            let imgWidth:Int32 = Int32(cell.avatarImg.layer.frame.width)
+            let imgHeight:Int32 = Int32(cell.avatarImg.layer.frame.height)
+            if(error == nil){
+                var f : AVFile = file
+                f.getThumbnail(true, width: imgWidth, height: imgHeight, withBlock: {
+                    image,error in
+                    
+                    if error == nil{
+                         cell.avatarImg.image = image
+                    }
+                })
+            }
+        })
         
-        let yearTime:String = dateComponents.year.description + "-" + dateComponents.month.description + "-" + dateComponents.day.description
-        let hourTime:String = dateComponents.hour.description + ":" + dateComponents.minute.description
-        let timestamp:String = yearTime + "  " + hourTime
-        
-        println(timestamp)
-        
-        println(sender)
-        println("sender name +: " + sender.username)
-        
-        cell.usernameLabel.text = sender.username
+        cell.usernameLabel.text = sender.valueForKey("nickname") as? String
         cell.tweetTextview.text = tweetText
         cell.timestampLabel.text = timestamp
         
-        //cell.tweetTextfield = "long ass tweet"
-        println("pass")
         
         return cell
     }
     
-    // move to a Common.swift
-    func getUser(id:String) -> AVUser{
-        
-        let query : AVQuery = AVQuery(className: "_User")
-        var obj : AVObject = query.getObjectWithId(id)
-        
-        return obj as! AVUser
-    }
+    
+    
+    
 }

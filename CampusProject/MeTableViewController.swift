@@ -10,18 +10,42 @@ import UIKit
 
 class MeTableViewController: UITableViewController {
 
+    @IBOutlet weak var avatarImg: UIImageView!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func viewWillAppear(animated: Bool) {
-         //self.profileImg.image = LocalUser.profileImage
+        
+        // show user id
+        self.idLabel.text = AVUser.currentUser().username
+        
+        // show user nickname
+        self.nicknameLabel.text = AVUser.currentUser().objectForKey("nickname") as? String
+        
+        // show profile image
+        let avatarID = AVUser.currentUser().objectForKey("avatar").objectId
+        
+        AVFile.getFileWithObjectId(avatarID,withBlock: {
+            file,error in
+            
+            let imgWidth:Int32 = Int32(self.avatarImg.layer.frame.width)
+            let imgHeight:Int32 = Int32(self.avatarImg.layer.frame.height)
+            if(error == nil){
+                var f : AVFile = file
+                f.getThumbnail(true, width: imgWidth, height: imgHeight, withBlock: {
+                    image,error in
+                    
+                    if error == nil{
+                        self.avatarImg.image = image
+                    }
+                })
+            }
+        })
     }
     
 
