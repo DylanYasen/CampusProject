@@ -18,6 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDele
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
@@ -27,6 +28,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDele
     @IBOutlet weak var idTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    
+    var isNewUser = false
     @IBAction func OnLogin(sender: AnyObject) {
         var studentID = idTextfield.text
         var password = passwordTextfield.text
@@ -36,13 +39,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDele
         
         // login succeed
         if((myUser) != nil){
+
+            if(isNewUser){
+                
+                // initial avatar
+                let avatarID = "55a1111ae4b06d11d32c6859" as String
+                let query : AVQuery = AVQuery(className: "_File")
+                var obj  = query.getObjectWithId(avatarID)
+                myUser?.setObject(obj, forKey: "avatar")
+                myUser?.setObject(studentID, forKey: "nickname")
+                myUser?.save()
+            }
             
-            // **** TODO:
-            //   REMOVE later
-            myUser!.setObject(studentID, forKey: "nickname")
-            myUser?.saveInBackground()
-            
-            // transit
             self.performSegueWithIdentifier("loginSuccess", sender: self)
         }
         // login failed
@@ -62,19 +70,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDele
         var password = passwordTextfield.text
         
         var error : NSError?
-        
+
         var myUser:AVUser = AVUser()
         myUser.username = studentID
         myUser.password = password
         myUser.setObject(studentID, forKey: "nickname")
+
         
         if(myUser.signUp(&error)){
+            
+            
             let alert = UIAlertView()
             alert.title = "注册成功"
             alert.message = "请登录"
             alert.addButtonWithTitle("登录")
             alert.show()
             alert.delegate = self
+            self.isNewUser = true
         }
         
         else{

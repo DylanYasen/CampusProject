@@ -95,12 +95,17 @@ class MyProfileTableViewController: UITableViewController, UIImagePickerControll
         picker.dismissViewControllerAnimated(true, completion: nil)
     
         // store image file on cloud
-        let imgData : NSData = UIImagePNGRepresentation(image)
+        let imgData : NSData?
+            
+        if(UIImagePNGRepresentation(image) != nil){
+             imgData = UIImagePNGRepresentation(image)
+        }
+        else{
+            imgData = UIImageJPEGRepresentation(image, 1.0)
+        }
+        
         var imgFile = AVFile.fileWithData(imgData) as! AVFile
-        
-        // save it locally
-        LocalUser.profileImage = image
-        
+   
         // upload image
         imgFile.saveInBackgroundWithBlock({
             saveSucceeded,saveError in

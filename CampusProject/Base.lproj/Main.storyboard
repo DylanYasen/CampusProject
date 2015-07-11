@@ -280,18 +280,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dbj-Fk-MBq">
-                                <rect key="frame" x="117" y="140" width="366" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Dbj-Fk-MBq" secondAttribute="height" multiplier="61:5" id="tZs-rN-FWr"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="72" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dbj-Fk-MBq" firstAttribute="top" secondItem="s56-w1-9T8" secondAttribute="bottom" constant="76" id="bVE-cf-gNh"/>
-                            <constraint firstAttribute="centerX" secondItem="Dbj-Fk-MBq" secondAttribute="centerX" id="ikJ-xl-pud"/>
+                            <constraint firstItem="Dbj-Fk-MBq" firstAttribute="leading" secondItem="g40-ja-KYF" secondAttribute="leadingMargin" id="7PS-g9-94D"/>
+                            <constraint firstItem="Dbj-Fk-MBq" firstAttribute="trailing" secondItem="g40-ja-KYF" secondAttribute="trailingMargin" id="KC7-lQ-dHl"/>
+                            <constraint firstItem="Dbj-Fk-MBq" firstAttribute="top" secondItem="s56-w1-9T8" secondAttribute="bottom" constant="8" id="uZs-We-qJ8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="新昵称" id="8Nw-fp-CtD">
