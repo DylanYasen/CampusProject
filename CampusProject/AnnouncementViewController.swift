@@ -54,11 +54,11 @@ class AnnouncementViewController: UITableViewController {
     
     func loadData(){
     
-        var query : AVQuery = AVQuery(className: "Announcement")
+        let query : AVQuery = AVQuery(className: "Announcement")
         query.findObjectsInBackgroundWithBlock({
             array, error in
             
-            println("result")
+            print("result")
             
             let result:NSArray = array
             let obj:[AnyObject] = array
@@ -66,7 +66,7 @@ class AnnouncementViewController: UITableViewController {
             
             if result.count>0{
                 self.dataArray = result
-                println(self.dataArray[0])
+                print(self.dataArray[0])
             }
             
             // order by date (latest the topest)
@@ -100,7 +100,7 @@ class AnnouncementViewController: UITableViewController {
         
         // get time stamp
         let date = tweet.objectForKey("createdAt") as! NSDate
-        var dateFormatter : NSDateFormatter = NSDateFormatter()
+        let dateFormatter : NSDateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         let timestamp = dateFormatter.stringFromDate(date)
@@ -120,7 +120,7 @@ class AnnouncementViewController: UITableViewController {
             let imgWidth:Int32 = Int32(cell.avatarImg.layer.frame.width)
             let imgHeight:Int32 = Int32(cell.avatarImg.layer.frame.height)
             if(error == nil){
-                var f : AVFile = file
+                let f : AVFile = file
                 f.getThumbnail(true, width: imgWidth, height: imgHeight, withBlock: {
                     image,error in
                     
@@ -139,7 +139,7 @@ class AnnouncementViewController: UITableViewController {
     func getUser(id:String) -> AVUser{
         
         let query : AVQuery = AVQuery(className: "_User")
-        var obj : AVObject = query.getObjectWithId(id)
+        let obj : AVObject = query.getObjectWithId(id)
         
         return obj as! AVUser
     }

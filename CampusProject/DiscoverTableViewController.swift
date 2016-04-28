@@ -38,11 +38,11 @@ class DiscoverTableViewController: UITableViewController {
     
     //
     func loadNewData(){
-        var query : AVQuery = AVQuery(className: "Tweet")
+        let query : AVQuery = AVQuery(className: "Tweet")
         query.findObjectsInBackgroundWithBlock({
             array, error in
             
-            println("result")
+            print("result")
             
             let result:NSArray = array
             let obj:[AnyObject] = array
@@ -50,7 +50,7 @@ class DiscoverTableViewController: UITableViewController {
             
             if result.count>0{
                 self.dataArray = result
-                println(self.dataArray[0])
+                print(self.dataArray[0])
             }
             
             // order by date (latest the topest)
@@ -101,7 +101,7 @@ class DiscoverTableViewController: UITableViewController {
         
         // get time stamp
         let date = tweet.objectForKey("createdAt") as! NSDate
-        var dateFormatter : NSDateFormatter = NSDateFormatter()
+        let dateFormatter : NSDateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         let timestamp = dateFormatter.stringFromDate(date)
@@ -117,7 +117,7 @@ class DiscoverTableViewController: UITableViewController {
             let imgWidth:Int32 = Int32(cell.avatarImg.layer.frame.width)
             let imgHeight:Int32 = Int32(cell.avatarImg.layer.frame.height)
             if(error == nil){
-                var f : AVFile = file
+                let f : AVFile = file
                 f.getThumbnail(true, width: imgWidth, height: imgHeight, withBlock: {
                     image,error in
                     

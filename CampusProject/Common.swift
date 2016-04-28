@@ -25,7 +25,7 @@ public class Common {
     public static func getUser(id:String) -> AVUser{
         
         let query : AVQuery = AVQuery(className: "_User")
-        var obj : AVObject = query.getObjectWithId(id)
+        let obj : AVObject = query.getObjectWithId(id)
         
         return obj as! AVUser
     }
@@ -33,7 +33,7 @@ public class Common {
     public static func getFileObj(id:String) -> AVObject{
         
         let query : AVQuery = AVQuery(className: "_File")
-        var obj  = query.getObjectWithId(id)
+        let obj  = query.getObjectWithId(id)
 
         return obj
     }

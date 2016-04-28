@@ -33,7 +33,7 @@ class MyProfileTableViewController: UITableViewController, UIImagePickerControll
             let imgWidth:Int32 = Int32(self.profileImg.layer.frame.width)
             let imgHeight:Int32 = Int32(self.profileImg.layer.frame.height)
             if(error == nil){
-                var f : AVFile = file
+                let f : AVFile = file
                 f.getThumbnail(true, width: imgWidth, height: imgHeight, withBlock: {
                     image,error in
                     
@@ -55,8 +55,8 @@ class MyProfileTableViewController: UITableViewController, UIImagePickerControll
         let row = indexPath.row;
         let section = indexPath.section
         
-        println(section)
-        println(row)
+        print(section)
+        print(row)
         
         if section == 0 {
 
@@ -104,7 +104,7 @@ class MyProfileTableViewController: UITableViewController, UIImagePickerControll
             imgData = UIImageJPEGRepresentation(image, 1.0)
         }
         
-        var imgFile = AVFile.fileWithData(imgData) as! AVFile
+        let imgFile = AVFile.fileWithData(imgData) as! AVFile
    
         // upload image
         imgFile.saveInBackgroundWithBlock({

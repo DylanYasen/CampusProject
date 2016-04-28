@@ -36,7 +36,7 @@ class DiscoverComposeViewController: UIViewController {
             return
         }
         
-        var obj : AVObject = AVObject(className: "Tweet")
+        let obj : AVObject = AVObject(className: "Tweet")
         obj.setObject(AVUser.currentUser(), forKey: "sender")
         obj.setObject(tweetTextfield.text, forKey: "text")
         obj.save()

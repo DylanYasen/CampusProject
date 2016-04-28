@@ -37,7 +37,7 @@ class AnnouncementComposetViewController: UIViewController {
             return
         }
         
-        var obj : AVObject = AVObject(className: "Announcement")
+        let obj : AVObject = AVObject(className: "Announcement")
         obj.setObject(AVUser.currentUser(), forKey: "sender")
         obj.setObject(composeTextview.text, forKey: "text")
         obj.save()

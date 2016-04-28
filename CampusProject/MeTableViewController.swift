@@ -36,7 +36,7 @@ class MeTableViewController: UITableViewController {
             let imgWidth:Int32 = Int32(self.avatarImg.layer.frame.width)
             let imgHeight:Int32 = Int32(self.avatarImg.layer.frame.height)
             if(error == nil){
-                var f : AVFile = file
+                let f : AVFile = file
                 f.getThumbnail(true, width: imgWidth, height: imgHeight, withBlock: {
                     image,error in
                     

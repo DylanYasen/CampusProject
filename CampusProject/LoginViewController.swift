@@ -15,7 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDele
     }
     
     // hide keyboard
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -31,11 +31,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDele
     
     var isNewUser = false
     @IBAction func OnLogin(sender: AnyObject) {
-        var studentID = idTextfield.text
-        var password = passwordTextfield.text
+        let studentID = idTextfield.text
+        let password = passwordTextfield.text
         
         var error : NSError?
-        var myUser:AVUser? = AVUser.logInWithUsername(studentID, password: password, error: &error)
+        var myUser:AVUser?
+        do {
+            myUser = try AVUser.logInWithUsername(studentID, password: password)
+        } catch let error1 as NSError {
+            error = error1
+            myUser = nil
+        }
         
         // login succeed
         if((myUser) != nil){
@@ -45,7 +51,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDele
                 // initial avatar
                 let avatarID = "55a1111ae4b06d11d32c6859" as String
                 let query : AVQuery = AVQuery(className: "_File")
-                var obj  = query.getObjectWithId(avatarID)
+                let obj  = query.getObjectWithId(avatarID)
                 myUser?.setObject(obj, forKey: "avatar")
                 myUser?.setObject(studentID, forKey: "nickname")
                 myUser?.save()
@@ -66,19 +72,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDele
     }
     
     @IBAction func OnSignUp(sender: AnyObject) {
-        var studentID = idTextfield.text
-        var password = passwordTextfield.text
+        let studentID = idTextfield.text
+        let password = passwordTextfield.text
         
         var error : NSError?
 
-        var myUser:AVUser = AVUser()
+        let myUser:AVUser = AVUser()
         myUser.username = studentID
         myUser.password = password
         myUser.setObject(studentID, forKey: "nickname")
 
-        
         if(myUser.signUp(&error)){
-            
             
             let alert = UIAlertView()
             alert.title = "注册成功"
@@ -93,7 +97,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate,UIAlertViewDele
             let alert = UIAlertView()
             alert.title = "注册失败"
             
-            alert.message = error!.localizedDescription
+            alert.message = error!.localizedDescription;
             
             alert.addButtonWithTitle("重试")
             alert.show()
